@@ -4,6 +4,7 @@ import { createUser, editUser } from "../../redux/slices/user-slice";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import * as uuid from "uuid";
+
 const Login = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +22,6 @@ const Login = () => {
   const age = useRef(null);
   const password = useRef(null);
 
-  // Function to update user data if editing
   const updateUserData = () => {
     const updatedUser = allUsers.find((item) => item.id === paramsId);
     if (updatedUser) {
@@ -158,6 +158,7 @@ const Login = () => {
                   required
                   name="gender"
                   value="male"
+                  checked={gender === "male"} // Ensure the gender is selected based on state
                   onChange={(e) => setGender(e.target.value)}
                   className="form-radio h-5 w-5 text-[#00BFFF] mr-2"
                 />
@@ -169,6 +170,7 @@ const Login = () => {
                   name="gender"
                   required
                   value="female"
+                  checked={gender === "female"} // Ensure the gender is selected based on state
                   onChange={(e) => setGender(e.target.value)}
                   className="form-radio h-5 w-5 text-[#00BFFF] mr-2"
                 />

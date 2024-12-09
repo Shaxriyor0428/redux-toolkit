@@ -17,7 +17,7 @@ const UsersCart = ({ data }) => {
 
   const userData = data?.map((item) => (
     <div
-      key={item?.id || item?.email} // Added a fallback to ensure key is always unique
+      key={item?.id || item?.email} 
       className="bg-[#1D2D43] text-white p-6 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 h-auto w-auto"
     >
       <div className="h-[100px] w-[100px] bg-gradient-to-br from-[#00BFFF] to-[#008CBA] rounded-full mx-auto flex items-center justify-center mb-4">
